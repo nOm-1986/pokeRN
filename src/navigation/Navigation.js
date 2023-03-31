@@ -10,10 +10,28 @@ const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-      <Tab.Navigator>
+      <Tab.Navigator  screenOptions = {({ route }) =>({
+            tabBarActiveTintColor: 'red',
+            tabBarInactiveTintColor: 'black',
+            tabBarStyle: [
+            {
+                backgroundColor: 'blue',
+                display: "flex",
+                position: 'absolute', 
+                bottom: 20,
+                height: 80,
+                borderRadius: 10,
+                shadowColor:'#000',
+                shadowOpacity: 0.06,
+                marginHorizontal: 20
+            },
+            null
+            ]
+        })}
+      >
         <Tab.Screen 
             name="Favoritos" 
-            component={Favorite} 
+            component={Favorite}
             options={{tabBarLabel: "Favoritos", tabBarIcon: ({color, size}) => (
                     <Icon name='heart' color={color} size={size}/>
                 )
@@ -29,11 +47,11 @@ export default function Navigation() {
         <Tab.Screen 
             name='Account' 
             component={Account}
-            options={{tabBarLabel: "Account", tabBarIcon: ({color, size}) => (
+            options={{tabBarLabel: "Mi cuenta", tabBarIcon: ({color, size}) => (
                 <Icon name='user' color={color} size={size}/>
             )
             }}
-            style={{ width: 100, height: 100, marginTop: 200 }}
+            style={{ width: 100, height: 100, margin: 200 }}
         />
     </Tab.Navigator>
   );
