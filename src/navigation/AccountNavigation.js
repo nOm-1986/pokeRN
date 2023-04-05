@@ -1,0 +1,15 @@
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import AccountScreen from '../screens/Account';
+
+const Stack = createStackNavigator();
+
+export default function AccountNavigation() {
+  return (
+    <Stack.Navigator screenOptions={ () => ({
+        headerTitleAlign: 'center'
+    })}>
+        <Stack.Screen name='Account' component={AccountScreen} />
+    </Stack.Navigator>
+  )
+}

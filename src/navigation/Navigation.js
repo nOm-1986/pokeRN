@@ -2,51 +2,52 @@ import React from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Favorite from '../screens/Favorite';
-import Account from '../screens/Account';
-import Pokedex from '../screens/Pokedex';
+import FavoriteNavigation from './FavoriteNavigation';
+import PokedexNavigation from './PokedexNavigation';
+import AccountNavigation from './AccountNavigation';
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-      <Tab.Navigator  screenOptions = {({ route }) =>({
-            tabBarActiveTintColor: 'red',
+    <Tab.Navigator   screenOptions = {({ route }) =>({
+            tabBarActiveTintColor: '#FF5349',
             tabBarInactiveTintColor: 'black',
+            headerShown: false,
             tabBarStyle: [
             {
-                backgroundColor: 'blue',
+                backgroundColor: 'white',
                 display: "flex",
                 position: 'absolute', 
-                bottom: 20,
-                height: 80,
+                bottom: 10,
+                height: 60,
                 borderRadius: 10,
                 shadowColor:'#000',
                 shadowOpacity: 0.06,
-                marginHorizontal: 20
+                marginHorizontal: 10,
             },
             null
             ]
         })}
-      >
+    >
         <Tab.Screen 
-            name="Favoritos" 
-            component={Favorite}
-            options={{tabBarLabel: "Favoritos", tabBarIcon: ({color, size}) => (
+            name="Favoritos t" 
+            component={ FavoriteNavigation }
+            options={{ tabBarLabel: "Favoritos", tabBarIcon: ({color, size}) => (
                     <Icon name='heart' color={color} size={size}/>
                 )
             }}
         />
         <Tab.Screen 
-            name="Pokedex" 
-            component={Pokedex} 
+            name="Pokedex t" 
+            component={ PokedexNavigation } 
             options={{tabBarLabel: "",
                 tabBarIcon: () => renderPokeball()
             }}
         />
         <Tab.Screen 
-            name='Account' 
-            component={Account}
+            name='Account t' 
+            component={ AccountNavigation }
             options={{tabBarLabel: "Mi cuenta", tabBarIcon: ({color, size}) => (
                 <Icon name='user' color={color} size={size}/>
             )
@@ -61,7 +62,7 @@ function renderPokeball() {
     return (
         <Image
             source={require('../assets/pokeball.png')}
-            style={{width: 75, height: 75, top: -17}}
+            style={{width: 75, height: 75, top: -25}}
         />
     )
 }

@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Navitation2() {
+export default function Pokemon() {
   return (
     <View>
-      <Text>Navitation2</Text>
+      <Text>Estamos en un POKEMON</Text>
     </View>
   )
 }
