@@ -9,7 +9,11 @@ export default function AccountNavigation() {
     <Stack.Navigator screenOptions={ () => ({
         headerTitleAlign: 'center'
     })}>
-        <Stack.Screen name='Account' component={AccountScreen} />
+        <Stack.Screen 
+          name='Account' 
+          component={AccountScreen} 
+          options={{ title: "Cuenta"}}
+        />
     </Stack.Navigator>
   )
 }

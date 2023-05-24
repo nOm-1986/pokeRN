@@ -9,7 +9,11 @@ export default function FavoriteNavigation() {
     <Stack.Navigator screenOptions={ () =>({
         headerTitleAlign: 'center'
     })} >
-        <Stack.Screen name='Favoritos' component={FavoriteScreen} />
+        <Stack.Screen 
+          name='FavoritoFavorites' 
+          component={FavoriteScreen} 
+          options={{ title: "Favoritos" }}
+        />
     </Stack.Navigator>
   )
 }
