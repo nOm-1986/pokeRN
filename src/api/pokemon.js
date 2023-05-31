@@ -11,4 +11,16 @@ const getPokemonsApi = async () => {
     }
 }
 
-export { getPokemonsApi };
+//Funtion which connect with the server and gets pokemon details from a url.
+const getPokemonDetailsByUrlApi = async (url) => {
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        return result;
+
+    } catch (error) {
+        throw error;
+    }
+};
+
+export { getPokemonsApi, getPokemonDetailsByUrlApi };
