@@ -5,10 +5,10 @@ import {getPokemonsApi} from '../api/pokemon';
 export default function Pokedex() {
   
   useEffect(() => {
+    //Para que se ejecute una funcion asincrona es necesario ejecutar una función auto-ejecutable.
     (async () => {
       await loadPokemons();
     })();
-    return
   }, []);
 
   const loadPokemons = async () => {
@@ -19,6 +19,7 @@ export default function Pokedex() {
       console.error(error);
     }
   }
+
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
