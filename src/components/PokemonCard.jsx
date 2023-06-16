@@ -27,7 +27,9 @@ const PokemonCard = (props) => {
 const Style = StyleSheet.create({
     PokemonCard: {
         flex: 1,
-        height: 130
+        height: 130,
+        borderStyle: 'solid',
+        borderColor: 'blue'
     },
     spacing: {
         flex: 1,
@@ -42,15 +44,15 @@ const Style = StyleSheet.create({
     },
     image: {
         position: "absolute",
-        bottom: 2,
-        right: 2,
+        bottom: 10,
+        right: 5,
         width: 90,
         height: 90
     },
     number: {
         position:'absolute',
         right:10,
-        top: 10,
+        top: 0,
         color: '#fff',
         fontSize: 12
     }
