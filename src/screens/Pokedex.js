@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { StyleSheet, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from '../api/pokemon';
 import { PokemonList } from '../components/PokemonList';
@@ -45,7 +45,7 @@ export default function Pokedex() {
 
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
-      <PokemonList pokemons={pokemons}/>
+      <PokemonList pokemons={pokemons} loadPokemons={loadPokemons}/>
     </SafeAreaView>
   )
 }
