@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import { StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from '../api/pokemon';
 import { PokemonList } from '../components/PokemonList';
@@ -43,8 +44,15 @@ export default function Pokedex() {
 
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.AndroidSafeArea}>
       <PokemonList pokemons={pokemons}/>
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  AndroidSafeArea: {
+    paddingTop: Platform.OS === "android" ? 25 : 0,
+    paddingBottom: Platform.OS === "android" ? 80 : 0,
+  },
+});
